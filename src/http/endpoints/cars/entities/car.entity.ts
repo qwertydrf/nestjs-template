@@ -9,6 +9,9 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
+const datetime =
+  process?.env?.TYPEORM_CONNECTION == 'mysql' ? 'datetime' : 'timestamp';
+
 @Entity('cars')
 export class CarEntity {
   @IsNumber()
@@ -40,11 +43,11 @@ export class CarEntity {
   year?: number;
 
   @IsDate()
-  @Column({ name: 'created_at', type: 'datetime' })
+  @Column({ name: 'created_at', type: datetime })
   createdAt?: DateTime | Date;
 
   @IsDate()
-  @Column({ name: 'updated_at', type: 'datetime' })
+  @Column({ name: 'updated_at', type: datetime })
   updatedAt?: DateTime | Date;
 
   @AfterLoad()

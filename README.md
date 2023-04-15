@@ -49,3 +49,9 @@ npm run migration:revert
 ```shell
 nest g resource http/endpoints/{name}
 ```
+
+### Use postgresql docker
+
+```shell
+docker-compose up -d
+```
