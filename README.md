@@ -49,3 +49,9 @@ npm run migration:revert
 ```shell
 nest g resource http/endpoints/{name}
 ```
+
+### Use mysql docker
+
+```shell
+docker-compose up -d
+```
